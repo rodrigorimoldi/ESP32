@@ -1,5 +1,5 @@
 // Definições de variáveis e constantes
-const int ledPin    = 2;    // GPIO2
+const int ledPin    = 15;    // GPI15
 const int timer     = 1000;
 
 // Parametrizações do dispositivo
