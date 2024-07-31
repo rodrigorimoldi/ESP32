@@ -1,23 +1,33 @@
+/*
+ * Arquivo:     Code2.ino
+ * Autor:       Prof. Rodrigo Rimoldi de Lima
+ *
+ * Criacao:     30/07/2024
+ * 
+ * Descricao:   Codigo desenvolvido para acionar um rele a partir
+ *              da verificacao de uma condicao de entrada.
+ */
+
 // Definições de variáveis e constantes
-const int ledPin      = 2;    // GPIO2
-const int teclaPin    = 15;   // GPIO15
-const int debouncing  = 20;
+#define  rele        19  // GPIO19
+#define  tecla       15  // GPIO15
+#define  debouncing  20  // Tempo para evitar trepidacoes
 
 // Parametrizações do dispositivo
 void setup() {
-  // Definição do modo operacional de cada pino
-  pinMode(ledPin, OUTPUT);
-  pinMode(teclaPin, INPUT);
+  pinMode(rele, OUTPUT);
+  pinMode(tecla, INPUT);
 }
 
+// Loop infinito
 void loop() {
-  if (!digitalRead(teclaPin)){
+  if (digitalRead(tecla)){
     delayMicroseconds(debouncing);
-    digitalWrite(ledPin, HIGH);
+    digitalWrite(rele, HIGH);
   }
 
   else{
     delayMicroseconds(debouncing);
-    digitalWrite(ledPin, LOW);
+    digitalWrite(rele, LOW);
   }
 }
