@@ -17,15 +17,28 @@ LiquidCrystal lcd(18, 5, 17, 16, 4, 0);
               // (RS, E, D4, D5, D6, D7), 4 bits
 
 void setup() {
-  // Configura o número de colunas e linhas do LCD
+  // Configura a quantidade de colunas e linhas do LCD
   lcd.begin(16, 2);
-  // Imprime uma mensagem no LCD
-  lcd.print("RODRIGO RIMOLDI ");
-}
+  }
 
 void loop() {
-  // Define o cursor para a coluna 0, linha 1
+  // Define o cursor para a coluna 0, linha 0
+  lcd.setCursor(0, 0);
+  // Imprime uma mensagem no na linha 1 do LCD
+  lcd.print("DEE - MICRO/2024");
+  // Define o cursor para a coluna 0, linha 2
   lcd.setCursor(0, 1);
-  // Imprime o número de segundos desde que o programa começou
-  lcd.print(millis() / 1000);
+  // Imprime uma mensagem no na linha 1 do LCD
+  lcd.print("RODRIGO RIMOLDI ");
+  delay(2000);
+  lcd.clear();
+  // Define o cursor para a coluna 0, linha 0
+  lcd.setCursor(0, 0);
+  // Imprime uma mensagem no na linha 1 do LCD
+  lcd.print("**** CODE 4 ****");
+  // Define o cursor para a coluna 0, linha 2
+  lcd.setCursor(0, 1);
+  // Imprime uma mensagem no na linha 1 do LCD
+  lcd.print("LCD: STEP 1");
+  delay(2000);
 }
